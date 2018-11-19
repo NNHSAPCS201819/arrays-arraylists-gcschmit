@@ -81,9 +81,49 @@ public class Notes
             //System.out.println(i + ": " + odds[i]);
         }
         
+        /*
+         * Array References
+         * 
+         *  Variables of type array, contain a reference to the
+         *      array stored in the computer's memory.
+         *      
+         *  Assigning one array variable's value to another,
+         *      copies the reference, not the array's elements.
+         */
         int[] moreOdds = odds;
         
         odds[2] = 6;
         System.out.println(moreOdds[2]);        // prints 6
+        
+        /*
+         * Enhanced For Loop
+         *  
+         *  Similiar to the "for i in ..." structure in Python.
+         *  Iterates over the elements in an array
+         */
+        for(int element : odds)
+        {
+            System.out.println(element);
+        }
+        
+        /*
+         * Limitations of Enhanced For Loops
+         * 
+         *  The local variable (e.g., element) contains a copy of
+         *      the value of the element in the array.
+         *  We cannot modify the elements in the array.
+         *  We cannot easily determine the index of an element.
+         */
+        for(int element : odds)
+        {
+            // this doesn't change any element in the array
+            element += 1;
+        }
+        
+        for(int element : odds)
+        {
+            System.out.println(element);
+        }
+        
     }
 }
