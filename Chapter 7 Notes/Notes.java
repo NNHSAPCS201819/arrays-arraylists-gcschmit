@@ -104,6 +104,24 @@ public class Notes
         {
             System.out.println(number);
         }
+        
+        /* 
+         * Limitation of Enhanced For Loops
+         *      The local variable (e.g., number) contains a copy
+         *          of the value of the element.
+         *      Cannot modify the value of the elements in the array.
+         *      Cannot easily determine the index of an element.
+         */
+        for(int number : odds)
+        {
+            // this doesn't change any element in the array
+            number += 1;
+        }
+        
+        for(int number : odds)
+        {
+            System.out.println(number);
+        }
     }
 
 }
