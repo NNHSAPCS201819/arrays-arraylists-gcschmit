@@ -36,17 +36,15 @@ public class CommonArrayAlgorithms
     {
         double sum = 0;
         double average = 0;
-        int count = 0;
 
         int[] array = createRandomArray( 10, 50 );
 
-        for( int i = 0; i < array.length; i++ )
+        for( int element : array)
         {
-            sum += array[ i ];
-            count++;
+            sum += element;
         }
 
-        average = sum / count;
+        average = sum / array.length;
         
         printArray( array );
         System.out.println( "sum: " + sum + " average: " + average );
@@ -59,7 +57,17 @@ public class CommonArrayAlgorithms
      *      but not at the beginning or end of the array
      */
     public static void printElementSeparators()
-    {
+     {
+        int[] array = createRandomArray( 10, 50 );
+
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.print(array[i]);
+            if (i < array.length - 1)
+            {
+                System.out.print("|");
+            }
+        }
     }
 
     /*
@@ -70,6 +78,29 @@ public class CommonArrayAlgorithms
      */
     public static void linearSearch( int valueToFind )
     {
+        int value = valueToFind;
+        int index = -1;
+        int[] array = createRandomArray(25, 50);
+
+        for(int i = 0; i < array.length; i++)
+        {
+             if(array[i] == value)
+             {
+                 index = i;
+                 break;
+             }
+        }
+        
+        if(index == -1)
+        {
+            System.out.println("Value is not in the array.");
+            printArray(array);
+        }
+        else
+        {
+            System.out.println("First index value of the element is " + index);
+            printArray(array);
+        }
     }
 
     /*
@@ -81,15 +112,33 @@ public class CommonArrayAlgorithms
      */
     public static void swapElements( int index1, int index2 )
     {
+        int[] array = createRandomArray( 10, 50 );
+        int num1 = array[index1];
+        int num2 = array[index2];
+        printArray(array);
+        array[index1] = num2;
+        array[index2] = num1;
+        printArray(array);
     }
 
-    /*
+     /*
      * Array Algorithm #5.1: findMax
      *  creates an array filled with random numbers
      *  prints the array and the greatest number
      */
     public static void findMax() 
     {
+        int[] array = createRandomArray(10,50);
+        int max = array[0];
+        for(int element : array)
+        {
+            if(element > max)
+            {
+                max = element;
+            }
+        }
+        System.out.println(max);
+        printArray(array);
     }
 
     /*
@@ -99,6 +148,17 @@ public class CommonArrayAlgorithms
      */
     public static void findMin()
     {
+        int[] array = createRandomArray(10,50);
+        int min = array[0];
+        for(int element : array)
+        {
+            if(element < min)
+            {
+                min = element;
+            }
+        }
+        System.out.println(min);
+        printArray(array);
     }
 
     /*
