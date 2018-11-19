@@ -93,6 +93,34 @@ public class Notes
         int[] moreOdds = odds;
         
         odds[2] = 6;
-        System.out.println(moreOdds[2]);    // prints ???
+        System.out.println(moreOdds[2]);    // prints 6
+        
+        /*
+         * Enhanced For Loop:
+         *  Similiar to the "for i in ..." structure in Python.
+         *  Iterates over the elements in an array
+         */
+        for(int element : odds)
+        {
+            System.out.println(element);
+        }
+        
+        /*
+         * Limitations of Enhanced For Loops:
+         *  The local variable (e.g., number) contains a copy of
+         *      the value of the element.
+         *  We cannot modify the values of the elements in the array.
+         *  We cannot easily determine the index of an element.
+         */
+        for(int element : odds)
+        {
+            // this doesn't change any element in the array
+            element += 1;
+        }
+        
+        for(int element : odds)
+        {
+            System.out.println(element);
+        }
     }
 }
