@@ -78,6 +78,7 @@ public class CommonArrayAlgorithms
     public static void linearSearch( int valueToFind )
     {
         int[] array = createRandomArray(20, 5);
+        printArray(array);
         for (int i = 0; i < array.length; i++) {
             if (array[i] == valueToFind) {
                 System.out.println("Index of " + valueToFind + ": " + i);
@@ -97,20 +98,14 @@ public class CommonArrayAlgorithms
     public static void swapElements( int index1, int index2 )
     {
         int[] array = createRandomArray( 10, 50 );
-        for(int number : array)
-        {
-            System.out.println(number);
-        }
-
-        System.out.println(" ");
-        int index;
-        index = array[index1];
+        printArray(array);
+        
+        int temp;
+        temp = array[index1];
         array[index1] = array[index2];
-        array[index2] = index;
-        for(int number : array)
-        {
-            System.out.println(number);
-        }
+        array[index2] = temp;
+        
+        printArray(array);
     }
 
     /*
@@ -121,7 +116,7 @@ public class CommonArrayAlgorithms
     public static void findMax() 
     {
         int[] array = createRandomArray( 10, 50 );
-        int maxValue = 0;
+        int maxValue = array[0];
         for(int number : array)
         {
             if(number > maxValue)
@@ -141,7 +136,7 @@ public class CommonArrayAlgorithms
     public static void findMin()
     {
         int[] array = createRandomArray( 10, 50 );
-        int min = 51;
+        int min = array[0];
         for(int i = 0; i < array.length; i++)
         {
             if (array[i] <= min)
@@ -150,10 +145,7 @@ public class CommonArrayAlgorithms
             }
         }
         System.out.println(min);
-        for (int j : array)
-        {
-            System.out.println(j);
-        }
+        printArray(array);
     }
 
     /*
@@ -167,16 +159,12 @@ public class CommonArrayAlgorithms
     public static int[] copyArray()
     {
         int[] yote = createRandomArray(10,20);
-        int[] copied = new int[10];
-        for(int i = 0;i<10;i ++){
-            copied[9-i]=yote[i];
+        int[] copied = new int[yote.length];
+        for(int i = 0;i<copied.length;i ++){
+            copied[copied.length-1-i]=yote[i];
         }
-        for (int number:yote){
-            System.out.println(number);
-        }
-        for (int number : copied){
-            System.out.println(number);
-        }
+        printArray(yote);
+        printArray(copied);
         return copied;
     }
 
