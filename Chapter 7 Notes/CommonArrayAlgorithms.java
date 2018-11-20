@@ -105,10 +105,8 @@ public class CommonArrayAlgorithms
     public static void swapElements( int index1, int index2 )
     {
         System.out.println("First List:");
-        int[] elements = new int[10];
-        for (int i = 0; i < elements.length; i++){
-            elements[i] = (int) (Math.random() * 20) + 1;
-        }
+        int[] elements = createRandomArray(10, 20);
+
         for (int num : elements) {
             System.out.println(num);
         }
@@ -132,11 +130,11 @@ public class CommonArrayAlgorithms
         int[] array = createRandomArray( 10, 50 );
         int max = array[0];
 
-        for (int i = 0; i<array.length; i++)
+        for (int val : array)
         {
-            if (max < array[i])
+            if (max < val)
             {
-                max = array[i];
+                max = val;
             }
         }
         printArray(array);
@@ -161,10 +159,8 @@ public class CommonArrayAlgorithms
                 min=number;
 
             }
-
-            System.out.println(number);
-
         }
+        printArray(fivePointTwo);
         System.out.println("\nMin= "+(min));
     }
 
@@ -178,16 +174,14 @@ public class CommonArrayAlgorithms
      */
     public static int[] copyArray()
     {
-        int[] random = CommonArrayAlgorithms.createRandomArray(10 , 50);
+        int[] random = CommonArrayAlgorithms.createRandomArray(10, 50);
         int[] copy = new int[random.length];
         for (int i = 0; i < copy.length; i++){
             copy[i] = random[copy.length-1-i];
             System.out.print(random[i] + " ");
         }
         System.out.println();
-        for (int number: copy){
-            System.out.print(number + " ");
-        }
+        printArray(copy);
         return copy;
     }
 
